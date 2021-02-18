@@ -1,0 +1,17 @@
+﻿<Window x:Class="Calculadora.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculadora"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="700" Width="500" MinWidth="500" MinHeight="701" Background="#FF464646">
+    <Grid Width="500" Height="699.7">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="601*"/>
+            <ColumnDefinition Width="192*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="LabelTitulo" Content="Calculadora WPF " HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="51" Width="500" Foreground="#FFE2E8F4" FontSize="28" FontWeight="Bold" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
+
+    </Grid>
+</Window>
