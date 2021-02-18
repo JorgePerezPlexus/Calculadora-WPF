@@ -31,6 +31,7 @@ namespace Calculadora
             BotonCubo.Visibility = Visibility.Hidden;
             BotonRaiz.Visibility = Visibility.Hidden;
             BotonPi.Visibility = Visibility.Hidden;
+            BotonFraccion.Visibility = Visibility.Hidden;
         }
 
         private void calcAvanzada()
@@ -39,6 +40,7 @@ namespace Calculadora
             BotonCubo.Visibility = Visibility.Visible;
             BotonRaiz.Visibility = Visibility.Visible;
             BotonPi.Visibility = Visibility.Visible;
+            BotonFraccion.Visibility = Visibility.Visible;
 
         }
 
@@ -354,9 +356,9 @@ namespace Calculadora
         private void BotonCubo_Click(object sender, RoutedEventArgs e)
         {
             double numero = Double.Parse(TextBoxResultado.Text);
-            double cuadrado = Math.Pow(numero, 3);
-            TextBoxResultado.Text = cuadrado.ToString();
-            memoria.Add(cuadrado);
+            double cubo = Math.Pow(numero, 3);
+            TextBoxResultado.Text = cubo.ToString();
+            memoria.Add(cubo);
             sumClicked = false;
             restClicked = false;
             multClicked = false;
@@ -367,9 +369,9 @@ namespace Calculadora
         private void BotonRaiz_Click(object sender, RoutedEventArgs e)
         {
             double numero = Double.Parse(TextBoxResultado.Text);
-            double cuadrado = Math.Sqrt(numero);
-            TextBoxResultado.Text = cuadrado.ToString();
-            memoria.Add(cuadrado);
+            double raiz = Math.Sqrt(numero);
+            TextBoxResultado.Text = raiz.ToString();
+            memoria.Add(raiz);
             sumClicked = false;
             restClicked = false;
             multClicked = false;
@@ -381,6 +383,19 @@ namespace Calculadora
         {
             TextBoxResultado.Text = "3,1415926535";
             LabelOperaciones.Content = "π";
+        }
+
+        private void BotonFraccion_Click(object sender, RoutedEventArgs e)
+        {
+            double numero = Double.Parse(TextBoxResultado.Text);
+            double fracc = 1/numero;
+            TextBoxResultado.Text = fracc.ToString();
+            memoria.Add(fracc);
+            sumClicked = false;
+            restClicked = false;
+            multClicked = false;
+            divClicked = false;
+            LabelOperaciones.Content = "1/x";
         }
     }
 }
