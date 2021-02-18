@@ -5,13 +5,36 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculadora"
         mc:Ignorable="d"
-        Title="MainWindow" Height="700" Width="500" MinWidth="500" MinHeight="701" Background="#FF464646">
-    <Grid Width="500" Height="699.7">
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="601*"/>
-            <ColumnDefinition Width="192*"/>
-        </Grid.ColumnDefinitions>
-        <Label x:Name="LabelTitulo" Content="Calculadora WPF " HorizontalAlignment="Center" Margin="0,10,0,0" VerticalAlignment="Top" Height="51" Width="500" Foreground="#FFE2E8F4" FontSize="28" FontWeight="Bold" Grid.ColumnSpan="2" HorizontalContentAlignment="Center"/>
+        Title="WPF Calculator" Height="700" Width="500" MinWidth="500" MinHeight="700">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" MappingMode="RelativeToBoundingBox" StartPoint="0.5,0">
+            <GradientStop Color="#FF2F2C2C" Offset="0"/>
+            <GradientStop Color="#FF4B4848" Offset="0.479"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid x:Name="GridCalculadora" Margin="10,10,10,10">
+        <TextBox x:Name="TextBoxResultado" HorizontalAlignment="Center" Margin="7,10,6.6,533.4" TextWrapping="Wrap" Width="460" Foreground="#FF1B1B1B" Background="#FFF7F4DB" FontFamily="Courier New" FontSize="48" AcceptsTab="True" MaxLines="1" MaxLength="50" IsReadOnly="True"/>
+        <Button x:Name="BotonUno" Content="1" HorizontalAlignment="Left" Height="67" Margin="27,248,0,0" VerticalAlignment="Top" Width="80" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonUno_Click"/>
+        <Button x:Name="BotonDos" Content="2" HorizontalAlignment="Left" Height="67" Margin="132,248,0,0" VerticalAlignment="Top" Width="79" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonDos_Click"/>
+        <Button x:Name="BotonTres" Content="3" HorizontalAlignment="Left" Height="67" Margin="240,248,0,0" VerticalAlignment="Top" Width="80" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonTres_Click"/>
+        <Button x:Name="BotonCuatro" Content="4" HorizontalAlignment="Left" Height="66" Margin="27,347,0,0" VerticalAlignment="Top" Width="80" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonCuatro_Click"/>
+        <Button x:Name="BotonCinco" Content="5" HorizontalAlignment="Left" Height="66" Margin="132,347,0,0" VerticalAlignment="Top" Width="79" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonCinco_Click"/>
+        <Button x:Name="BotonSeis" Content="6" HorizontalAlignment="Left" Height="66" Margin="240,347,0,0" VerticalAlignment="Top" Width="80" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonSeis_Click"/>
+        <Button x:Name="BotonSiete" Content="7" HorizontalAlignment="Left" Height="64" Margin="27,451,0,0" VerticalAlignment="Top" Width="80" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonSiete_Click"/>
+        <Button x:Name="BotonOcho" Content="8" HorizontalAlignment="Left" Height="64" Margin="132,451,0,0" VerticalAlignment="Top" Width="79" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonOcho_Click"/>
+        <Button x:Name="BotonNueve" Content="9" HorizontalAlignment="Left" Height="64" Margin="240,451,0,0" VerticalAlignment="Top" Width="80" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonNueve_Click"/>
+        <Button x:Name="BotonCero" Content="0" HorizontalAlignment="Left" Height="67" Margin="27,555,0,0" VerticalAlignment="Top" Width="80" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonCero_Click"/>
+        <Button x:Name="BotonIgual" Content="=" HorizontalAlignment="Left" Height="67" Margin="240,555,0,0" VerticalAlignment="Top" Width="205" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonIgual_Click"/>
+        <Button x:Name="BotonSumar" Content="+" HorizontalAlignment="Left" Height="67" Margin="366,153,0,0" VerticalAlignment="Top" Width="79" FontFamily="Calibri" FontSize="36" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF24283C" RenderTransformOrigin="-0.119,0.358" Click="BotonSumar_Click"/>
+        <Button x:Name="BotonRestar" Content="-" HorizontalAlignment="Left" Height="66" Margin="366,249,0,0" VerticalAlignment="Top" Width="79" FontFamily="Calibri" FontSize="36" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF24283C" Click="BotonRestar_Click"/>
+        <Button x:Name="BotonMultiplicar" Content="x" HorizontalAlignment="Left" Height="64" Margin="366,349,0,0" VerticalAlignment="Top" Width="79" FontFamily="Calibri" FontSize="36" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF24283C" Click="BotonMultiplicar_Click"/>
+        <Button x:Name="BotonDividir" Content="/" HorizontalAlignment="Left" Height="67" Margin="366,451,0,0" VerticalAlignment="Top" Width="79" FontFamily="Calibri" FontSize="36" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF24283C" Click="BotonDividir_Click"/>
+        <Button x:Name="BotonBorrarTodo" Content="C" HorizontalAlignment="Left" Height="67" Margin="133,153,0,0" VerticalAlignment="Top" Width="79" FontFamily="Calibri" FontSize="36" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF3C2B24" RenderTransformOrigin="-0.119,0.358" Click="BotonBorrarTodo_Click"/>
+        <Button x:Name="BotonBorrarAtras" Content="&lt;-" HorizontalAlignment="Left" Height="67" Margin="28,153,0,0" VerticalAlignment="Top" Width="79" FontFamily="Calibri" FontSize="36" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF3C2B24" RenderTransformOrigin="-0.119,0.358" Click="BotonBorrarAtras_Click"/>
+        <Button x:Name="BotonPunto" Content="," HorizontalAlignment="Left" Height="67" Margin="132,555,0,0" VerticalAlignment="Top" Width="80" FontFamily="Calibri" FontSize="34" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF2C2929" Click="BotonPunto_Click"/>
+        <Label x:Name="LabelOperaciones" Content="" HorizontalAlignment="Center" Height="36" Margin="426,10,0,0" VerticalAlignment="Top" Width="38" FontFamily="Nirmala UI" FontSize="18" HorizontalContentAlignment="Center"/>
+        <Button x:Name="BotonMemoria" Content="M" HorizontalAlignment="Left" Height="67" Margin="241,153,0,0" VerticalAlignment="Top" Width="79" FontFamily="Calibri" FontSize="36" Foreground="White" BorderBrush="#FF707070" BorderThickness="2" Background="#FF134532" RenderTransformOrigin="-0.119,0.358" Click="BotonMemoria_Click"/>
+        <Label x:Name="LabelCasio" Content="CASIO" HorizontalAlignment="Left" Height="31" Margin="165,117,0,0" VerticalAlignment="Top" Width="155" Foreground="White" HorizontalContentAlignment="Center" FontSize="16"/>
 
     </Grid>
 </Window>
