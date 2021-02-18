@@ -138,7 +138,10 @@ namespace Calculadora
 
         private void BotonPunto_Click(object sender, RoutedEventArgs e)
         {
-            TextBoxResultado.AppendText(",");
+            if (!TextBoxResultado.Text.Contains(",")) {
+                TextBoxResultado.AppendText(",");
+            }
+            
         }
 
         private void BotonBorrarAtras_Click(object sender, RoutedEventArgs e)
