@@ -10,19 +10,36 @@ namespace Calculadora
     public partial class MainWindow : Window
     {
         //Variables
-        //List<double> listaNumeros = new List<double>();
-        //List<string> listaOperaciones = new List<string>();
         List<double> memoria = new List<double>();
         bool sumClicked = false;
         bool restClicked = false;
         bool multClicked = false;
         bool divClicked = false;
+        bool calcAvan = false;
 
 
         public MainWindow()
         {
             InitializeComponent();
             TextBoxResultado.Text = "0";
+            calcSimple();
+        }
+
+        private void calcSimple()
+        {
+            BotonCuadrado.Visibility = Visibility.Hidden;
+            BotonCubo.Visibility = Visibility.Hidden;
+            BotonRaiz.Visibility = Visibility.Hidden;
+            BotonPi.Visibility = Visibility.Hidden;
+        }
+
+        private void calcAvanzada()
+        {
+            BotonCuadrado.Visibility = Visibility.Visible;
+            BotonCubo.Visibility = Visibility.Visible;
+            BotonRaiz.Visibility = Visibility.Visible;
+            BotonPi.Visibility = Visibility.Visible;
+
         }
 
 
@@ -284,6 +301,86 @@ namespace Calculadora
             double numero = Double.Parse(TextBoxResultado.Text);
             memoria.Add(numero);
             TextBoxResultado.Text = "0";
+        }
+
+        
+        private void MenuItem_Click_1(object sender, RoutedEventArgs e)
+        {
+            TextBoxResultado.Text = "0";
+            LabelOperaciones.Content = "";
+            memoria.Clear();
+            sumClicked = false;
+            restClicked = false;
+            multClicked = false;
+            divClicked = false;
+        }
+
+        private void MenuAcercaDe_Click(object sender, RoutedEventArgs e)
+        {
+            AcercaDeWindow w = new AcercaDeWindow();
+            w.Show();
+        }
+
+        private void SubMenúAvanzada_Click(object sender, RoutedEventArgs e)
+        {
+            if (calcAvan)
+            {
+                calcSimple();
+                calcAvan = false;
+                SubMenúAvanzada.Header = "Calc Simple";
+            } else
+            {
+                calcAvanzada();
+                calcAvan = true;
+                SubMenúAvanzada.Header = "Calc Simple";
+            }
+            
+            
+        }
+
+        private void BotonCuadrado_Click(object sender, RoutedEventArgs e)
+        {
+            double numero = Double.Parse(TextBoxResultado.Text);
+            double cuadrado = Math.Pow(numero, 2);
+            TextBoxResultado.Text = cuadrado.ToString();
+            memoria.Add(cuadrado);
+            sumClicked = false;
+            restClicked = false;
+            multClicked = false;
+            divClicked = false;
+            LabelOperaciones.Content = "x²";
+        }
+
+        private void BotonCubo_Click(object sender, RoutedEventArgs e)
+        {
+            double numero = Double.Parse(TextBoxResultado.Text);
+            double cuadrado = Math.Pow(numero, 3);
+            TextBoxResultado.Text = cuadrado.ToString();
+            memoria.Add(cuadrado);
+            sumClicked = false;
+            restClicked = false;
+            multClicked = false;
+            divClicked = false;
+            LabelOperaciones.Content = "x³";
+        }
+
+        private void BotonRaiz_Click(object sender, RoutedEventArgs e)
+        {
+            double numero = Double.Parse(TextBoxResultado.Text);
+            double cuadrado = Math.Sqrt(numero);
+            TextBoxResultado.Text = cuadrado.ToString();
+            memoria.Add(cuadrado);
+            sumClicked = false;
+            restClicked = false;
+            multClicked = false;
+            divClicked = false;
+            LabelOperaciones.Content = "√";
+        }
+
+        private void BotonPi_Click(object sender, RoutedEventArgs e)
+        {
+            TextBoxResultado.Text = "3,1415926535";
+            LabelOperaciones.Content = "π";
         }
     }
 }
